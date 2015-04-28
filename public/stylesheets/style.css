@@ -11,6 +11,14 @@ body,html {
 	color: #ffffff;
 }
 
+a:link {
+    color: #00aed1;
+}
+
+a:visited {
+    color: #00aed1;
+}
+
 .twitterInput{
   width: 195px;
   margin-top: 15px;
