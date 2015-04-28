@@ -1,0 +1,224 @@
+/* style.css
+ * This file provides css styles.
+ */
+body,html {
+	background-color: #3b4b54;
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light",
+		"Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	color: #ffffff;
+}
+
+.twitterInput{
+  width: 195px;
+  margin-top: 15px;
+}
+
+.statTableLeft{
+  float:left;
+  width:50%;
+}
+.statTableRight{
+  float:right;
+  width:50%;
+}
+
+.blurbs{
+  color:#00aed1;
+}
+
+#errorDiv{
+  color:red;
+  margin-top:15px;
+}
+
+#totalDiff{
+  color:#00aed1;
+  margin-top: 15px;
+}
+
+#tableDiv{
+	float:right;
+	width:100%;
+	padding-bottom: 2%;
+}
+.newappIcon {
+	padding-top: 2%;
+	display: block;
+	max-width: 200px;
+	max-height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+	padding-bottom: 2em;
+}
+
+h1 {
+	font-weight: bold;
+	font-size: 2em;
+	padding-left: 10%;
+	padding-right: 10%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.description {
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-bottom: 10px;
+	text-align: center;
+}
+
+.blue {
+	color: #00aed1;
+}
+
+/* header footer common */
+header,footer {
+	width: 100%;
+	text-align: center;
+	color: #fff;
+}
+
+/* content width */
+.title,.tips,section,.records {
+	width: 600px;
+}
+
+@media ( max-width : 600px) {
+	.title,.tips,section {
+		width: 100%;
+	}
+}
+
+.center {
+	padding-top: 10%;
+}
+
+/* alignment */
+.title,.tips,section,.records {
+	margin: 0 auto;
+}
+
+.socialmedia {
+	background-color: #26343f;
+	width: 100%;
+	height:6%;
+}
+
+.top {
+	background-color: #26343f;
+	width: 100%;
+}
+
+.middle {
+	width: 100%;
+	/*background-color: #313f4a;*/ 
+}
+
+.bottom {
+	background-color: #26343f;
+	width: 100%;
+}
+/* positions */
+header {
+	padding-top: 20px;
+	font-weight: bolder;
+	font-size: 1.3em;
+}
+
+footer {
+	position: relative;
+}
+
+.title,.tips {
+	height: 30px;
+	padding-top: 10px;
+	position: relative;
+}
+
+.title {
+	border-radius: 10px 10px 0 0;
+}
+
+.tips {
+	border-radius: 0 0 10px 10px;
+}
+
+table {
+	table-layout: fixed;
+	word-wrap: break-word;
+	position: relative;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.content {
+	padding: 5px;
+}
+
+button {
+	outline: none;
+}
+
+.goBtn {
+	position: relative;
+	top: 0px;
+	background: none;
+	border: none;
+	cursor: pointer;
+  	margin-left: 17%;
+  	margin-top:5px;
+}
+
+.ranges{
+	text-align: center;
+	position: relative;
+	float: left;
+	width: 100%;
+}
+
+/*  SECTIONS  */
+.section {
+	clear: both;
+	padding: 0px;
+	margin: 0px;
+}
+
+/*  COLUMN SETUP  */
+.col {
+	display: block;
+	float:left;
+	margin: 1% 0 1% 1.6%;
+}
+.col:first-child { margin-left: 0; }
+
+/*  GROUPING  */
+.group:before,
+.group:after { content:""; display:table; }
+.group:after { clear:both;}
+.group { zoom:1; /* For IE 6/7 */ }
+
+/*  GRID OF FIVE  */
+.span_5_of_5 {
+	width: 100%;
+}
+.span_4_of_5 {
+	width: 79.68%;
+}
+.span_3_of_5 {
+	width: 59.36%;
+}
+.span_2_of_5 {
+	width: 39.04%;
+}
+.span_1_of_5 {
+	width: 18.72%;
+}
+
+/*  GO FULL WIDTH BELOW 480 PIXELS */
+@media only screen and (max-width: 480px) {
+	.col {  margin: 1% 0 1% 0%; }
+	.span_1_of_5, .span_2_of_5, .span_3_of_5, .span_4_of_5, .span_5_of_5 { width: 100%; }
+}

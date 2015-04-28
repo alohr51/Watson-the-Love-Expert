@@ -1,0 +1,15 @@
+{
+  "name": "Watson-Love-App",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "body-parser": "1.10.x",
+    "cfenv": "1.0.x",
+    "express": "4.10.x",
+    "oauth": "0.9.x",
+    "twitter": "1.0.x",
+    "watson-developer-cloud": "0.9.x"
+  }
+}
