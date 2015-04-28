@@ -6,7 +6,7 @@ applications:
 name: WatsonLove
 memory: 512M
 instances: 1
-domain: mybluemix.net
+domain: stage1.mybluemix.net
 path: .
 declared-services:
   myPersonalityInsights:

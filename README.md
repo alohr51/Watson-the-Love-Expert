@@ -1,6 +1,8 @@
 # Dr. Watson, The Love Expert!
 
-## Prereq
+## [Live Demo](http://watsonlove.mybluemix.net/)
+
+## Prereq's for Bluemix
 
 * Create A Personality Insights Service
   * `cf create-service personality_insights "IBM Watson Personality Insights Monthly Plan" myPersonalityInsights`
