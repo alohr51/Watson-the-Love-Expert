@@ -1,5 +1,5 @@
 /*
-Dr. Watson the Love Expert!
+Watson the Love Expert!
 Created by: Andrew Lohr, ajlohr@us.ibm.com
 */
 
