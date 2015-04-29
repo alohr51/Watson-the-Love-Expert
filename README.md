@@ -1,4 +1,4 @@
-# Dr. Watson, The Love Expert!
+# Watson, The Love Expert!
 
 ## [Live Demo](http://watsonlove.mybluemix.net/)
 
