@@ -1,89 +1,89 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Watson, the Love Expert</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport"
-          content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
-    <meta name='keywords' content='ibm, watson, bluemix'>
-    <meta name='author' content='Andrew Lohr, ajlohr@us.ibm.com'>
-    <meta property="og:image" content="http://watsonlove.mybluemix.net/images/watson-title.png"/>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
+	<title>Watson the Love Expert</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
+	<meta name='keywords' content='ibm, watson, bluemix'>
+	<meta name='author' content='Andrew Lohr, ajlohr@us.ibm.com'>
+	<meta property="og:image" content="http://watsonlove.mybluemix.net/images/watson-title.png"/>
+	<link rel="shortcut icon" href="images/watson-icon.png"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.css">
+	<link rel="stylesheet" href="/stylesheets/style.css">
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-76140962-4', 'auto');
+		ga('send', 'pageview');
+	</script>
 </head>
 <body>
-    <div class = 'socialmedia'>
-        <div style='float:right;margin-top:5px;'>
-            <div id='tweetID' style='margin-left:5px'>
-            <a id='tweetBtn' href="https://twitter.com/share" class="twitter-share-button" data-url="http://watsonlove.mybluemix.net/" data-text="Check out your love score from IBM Watson!" data-hashtags="Bluemix,watsonLoveMatch">Tweet</a></div>
-        </div>
-        <div style='float:right;margin-top:5px;'class="fb-share-button" data-href="http://watsonlove.mybluemix.net/" data-layout="button_count"></div>
-        <div id="fb-root"></div>
-    </div>
-    <div class = 'top'>
-        <img class="newappIcon" src="images/watson-icon.png" />
-        <h1>
-            Welcome to <span class="blue">Watson, the Love Expert</span> on Bluemix!
-        </h1>
-        <p class="description">Learn more about Watson Personality Insights by reading the <a href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/personality-insights.html">documentation</a>. See how well you match with someone else using your tweets and IBM Watson!</p>
-    </div>
 
-    <div class = 'middle'>
-        <header>
-            <div class='title'>
-                Get Started with <span class="blue">Watson, the Love Expert</span> by entering two twitter handles below.
-            </div>
-            <div id='errorDiv'>.</div>
-            <div>
-                Lovebird 1: <input id='twitter1' class='twitterInput'></input><br />
-                Lovebird 2: <input id='twitter2' class='twitterInput'></input><br />
-                <button class='goBtn' onclick="validate()" title='submit'>
-                <img src='images/go.png' alt='add' />
-                </button>
-            </div>
-            <div id='stats'>
-                <div id='totalDiff'>Total Difference Score: </div>
-                <div id='bestMatchStat'>Best Match: </div>
-                <div id='worstMatchStat'>Worst Match: </div>
-                <div id="loader"><img src="images/loader.gif"></div>
-                <div id='tableDiv'>
-                    <table class='statTableLeft' id='person1'></table>
-                    <table class='statTableRight'id='person2'></table>
-                </div>
-            </div><!--end id stats-->
-        </header>
+<header class="header">
+	<div class = 'socialMedia'>
+		<a id='tweetBtn' href="https://twitter.com/share" class="twitter-share-button" data-url="https://watsonlove.mybluemix.net/" data-text="Check out your love score from IBM Watson!" data-hashtags="Bluemix,watsonLoveMatch">Tweet</a>
+		<div class="fb-share-button" data-href="https://watsonlove.mybluemix.net/" data-layout="button_count"></div>
+	</div>
+	</div>
+	<h1 class="headline">Welcome to <span class="watsonTitle">Watson the Love Expert</span> on Bluemix!</h1>
+</header>
+	<p id='description'>See how well two people match by analyzing their tweets with IBM Watson!</p>
+	<div class = 'row fullWidth inputDiv'>
+		<div class="large-3 columns">&nbsp;</div>
+		<div class="large-6 columns">
+			<div class="data">
+				<p>Get Started by entering two twitter handles below.</p>
+				<div id='errorView' class="errorView">&nbsp;</div>
+				<div id="love1">Lovebird 1: <input id='twitter1' class='twitterInput'></input></div>
+				<div id="love2">Lovebird 2: <input id='twitter2' class='twitterInput' value='@IBMWatson'></input></div>
+				<a id="submitButton" onClick="validate()" class="button subButton">GO</a>
+				<img id="loader" class="loader" src="images/loader.gif">
+			</div>
+			<div class='stats'>
+				<div class='row'>
+					<div class="large-4 columns">
+						<label>Difference Score:</label><span id='totalDiff'></span>
+					</div>
+					<div class="large-4 columns">
+						<label>Best Match:</label><span id='bestMatchStat'></span>
+					</div>
+					<div class="large-4 columns">
+						<label>Worst Match:</label><span id='worstMatchStat'></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="large-3 columns">&nbsp;</div>
+	</div>
+	<div class="row fullWidth tableData">
+		<div class="large-2 columns">&nbsp;</div>
+		<div class="large-4 columns traitTableCol">
+			<div class='traitTable'><table id='person1'></table></div>
+		</div>
+		<div class="large-4 columns traitTableCol">
+			 <div class='traitTable'><table id='person2'></table></div>
+		</div>
+		<div class="large-2 columns">&nbsp;</div>
+	</div>
 
-    </div><!--end of middle -->
+	<div class="reveal" id="myModal" data-reveal>
+	  <h1 id="modalTitle"></h1>
+	  <p id="modalBody"></p>
+	  <button class="close-button" data-close aria-label="Close modal" type="button">
+		<span aria-hidden="true">&times;</span>
+	  </button>
+	</div>
 
-    <div class = 'bottom'>
-        <div class="ranges">
-            <h2>Difference Ranges</h2>
-            <h4>How Compatible are you?</h4>
-        </div> 
-    <div class="section group">
-        <div class="col span_1_of_5">
-            <p class='blurbs'><b>0-600</b></p>
-            <p>You two are a perfect match! It seems as though you each share very similar characteristics, which means you would get along well and have little to argue about.  Therefore, what are you waiting for? Go out and enjoy a romantic first date by eating some fried chicken and biscuits! Or not...</p>
-        </div>
-        <div class="col span_1_of_5">
-            <p class='blurbs'><b>601-900</b></p>
-            <p>Congratulations! The two of you would make a great couple, because you are very alike in many respects. Though you are not completely similar, your differences will balance one another out well.  Start making moves towards developing this relationship further-you may just find that you are the perfect match for one another.</p>
-        </div>
-        <div class="col span_1_of_5">
-            <p class='blurbs'><b>901-1200</b></p>
-            <p>Though the two of you share certain commonalities, it seems as though you would be more suited as friends than as a couple.  However, don't give up on one another just yet-differences are sometimes the key to a successful and healthy relationship, as you two may balance one another out well.  You'll always miss 100% of the shots you don't take, so go ahead and give this relationship a shot.</p>
-        </div>
-        <div class="col span_1_of_5">
-            <p class='blurbs'><b>1201-1600</b></p>
-            <p>Well, the good news is that you are each very unique and independent individuals.  The bad news is that you are more different than you are similar when it comes to your personalities and characteristics.  However, even though you will drive each other crazy at times, you'll enjoy the challenge, while also learning to accept and embrace your individual differences. If you're willing to put forth the effort, then you'll have a rewarding life filled with excitement and happiness. </p>
-        </div>
-        <div class="col span_1_of_5">
-            <p class='blurbs'><b>1600+</b></p>
-            <p>If you are a firm believer in the saying, "opposites attract," then you've met your match! The two of you are clearly unalike in almost every way, but who are we to tell you that you aren't meant to be?  Though you may have a bumpy road ahead, no one ever said love was going to be easy...however, once you find the one you're meant to be with, it will be worth it in the long run.</p>
-        </div>
-    </div>
-
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-slimScroll/1.3.3/jquery.slimscroll.js"></script>
-    <script type="text/javascript" src="javascripts/client.js"></script>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-slimScroll/1.3.8/jquery.slimscroll.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.min.js"></script>
+	<script type="text/javascript" src="javascripts/ranges.js"></script>
+	<script type="text/javascript" src="javascripts/client.js"></script>
+	<script type="text/javascript"> 
+		$(document).foundation();
+	</script>
 </body>
 </html>

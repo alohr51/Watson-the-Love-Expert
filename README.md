@@ -1,11 +1,11 @@
 # Watson, The Love Expert!
 
-## [Live Demo](http://watsonlove.mybluemix.net/)
+## [Live Demo](https://watsonlove.mybluemix.net/)
 
 ## Prereq's for Bluemix
 
 * Create A Personality Insights Service
-  * `cf create-service personality_insights "IBM Watson Personality Insights Monthly Plan" myPersonalityInsights`
+  * `cf create-service personality_insights "IBM Watson Personality Insights Monthly Plan" watsonLovePersonalityInsights`
 
 * Setup your Twitter user provided service.
   * If you do not have credentials, go get a [Twitter consumer key and secret.](https://apps.twitter.com/app/new)

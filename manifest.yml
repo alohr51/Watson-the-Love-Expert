@@ -2,13 +2,7 @@
 applications:
 - services:
   - myTwitterService
-  - myPersonalityInsights
+  - watsonLovePersonalityInsights
 name: WatsonLove
 memory: 512M
 instances: 1
-domain: mybluemix.net
-path: .
-declared-services:
-  myPersonalityInsights:
-    label: personality_insights
-    plan: IBM Watson Personality Insights Monthly Plan

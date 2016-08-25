@@ -10,9 +10,9 @@ var twitter = require('./twitter');
 var cfenv = require("cfenv");
 var appEnv = cfenv.getAppEnv();
 
-var bodyParser = require('body-parser')
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+var bodyParser = require('body-parser');
+app.use(bodyParser.json({limit: '50mb'}));
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 
 // Configure static folder.
 var path = require('path');
