@@ -2,88 +2,86 @@
 <html>
 <head>
 	<title>Watson the Love Expert</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
-	<meta name='keywords' content='ibm, watson, bluemix'>
-	<meta name='author' content='Andrew Lohr, ajlohr@us.ibm.com'>
-	<meta property="og:image" content="http://watsonlove.mybluemix.net/images/watson-title.png"/>
-	<link rel="shortcut icon" href="images/watson-icon.png"/>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.css">
-	<link rel="stylesheet" href="/stylesheets/style.css">
-	<script>
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-		ga('create', 'UA-76140962-4', 'auto');
-		ga('send', 'pageview');
-	</script>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+	<meta name="keywords" content="IBMcloud, watson">
+	<meta name="author" content="Andrew Lohr">
+	<meta property="og:image" content="https://watsonlove.mybluemix.net/images/watson-title.png"/>
+
+	<link rel="shortcut icon" href="images/watson-icon.png"/>
+	<link rel="stylesheet" href="stylesheets/thirdparty/foundation-6.5.1.min.css">
+	<link rel="stylesheet" href="stylesheets/style.css">
+
+	<script type="text/javascript" src="javascript/thirdparty/analytics.js"></script>
 </head>
 <body>
 
-<header class="header">
-	<div class = 'socialMedia'>
-		<a id='tweetBtn' href="https://twitter.com/share" class="twitter-share-button" data-url="https://watsonlove.mybluemix.net/" data-text="Check out your love score from IBM Watson!" data-hashtags="Bluemix,watsonLoveMatch">Tweet</a>
-		<div class="fb-share-button" data-href="https://watsonlove.mybluemix.net/" data-layout="button_count"></div>
-	</div>
-	</div>
-	<h1 class="headline">Welcome to <span class="watsonTitle">Watson the Love Expert</span> on Bluemix!</h1>
-</header>
-	<p id='description'>See how well two people match by analyzing their tweets with IBM Watson!</p>
-	<div class = 'row fullWidth inputDiv'>
-		<div class="large-3 columns">&nbsp;</div>
-		<div class="large-6 columns">
+	<header class="header">
+		<h1 class="headline">Welcome to <span class="watsonTitle">Watson the Love Expert</span> on IBM Cloud!</h1>
+	</header>
+	<p id="description">See how well two people match by analyzing their tweets with IBM Watson!</p>
+	<div class="grid-x fullWidth inputDiv">
+		<div class="cell large-2">&nbsp;</div>
+		<div class="cell large-8">
 			<div class="data">
+
 				<p>Get Started by entering two twitter handles below.</p>
-				<div id='errorView' class="errorView">&nbsp;</div>
-				<div id="love1">Lovebird 1: <input id='twitter1' class='twitterInput'></input></div>
-				<div id="love2">Lovebird 2: <input id='twitter2' class='twitterInput' value='@IBMWatson'></input></div>
-				<a id="submitButton" onClick="validate()" class="button subButton">GO</a>
+				<div id="errorView" class="errorView">&nbsp;</div>
+				<div id="love1">
+					<label for="twitter1" class="twitterLabel">Lovebird 1</label>
+					<input id="twitter1" class="twitterInput"/>
+				</div>
+				<div id="love2">
+					<label for="twitter2" class="twitterLabel"> Lovebird 2</label>
+					<input id="twitter2" class="twitterInput" value="@IBMWatson"/>
+				</div>
+
+				<a id="goButton" class="button subButton">GO</a>
 				<img id="loader" class="loader" src="images/loader.gif">
+
 			</div>
-			<div class='stats'>
-				<div class='row'>
-					<div class="large-4 columns">
-						<label>Difference Score:</label><span id='totalDiff'></span>
+			<div class="stats">
+				<div class="grid-x">
+					<div class="cell large-4">
+						<label>Difference Score:</label>
+						<span id="totalDiff" class="statText"></span>
 					</div>
-					<div class="large-4 columns">
-						<label>Best Match:</label><span id='bestMatchStat'></span>
+					<div class="cell large-4">
+						<label>Best Match:</label>
+						<span id="bestMatchStat" class="statText"></span>
 					</div>
-					<div class="large-4 columns">
-						<label>Worst Match:</label><span id='worstMatchStat'></span>
+					<div class="cell large-4">
+						<label>Worst Match:</label>
+						<span id="worstMatchStat" class="statText"></span>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="large-3 columns">&nbsp;</div>
+		<div class="cell large-2"></div>
 	</div>
-	<div class="row fullWidth tableData">
-		<div class="large-2 columns">&nbsp;</div>
-		<div class="large-4 columns traitTableCol">
-			<div class='traitTable'><table id='person1'></table></div>
+	<div class="grid-x fullWidth tableData">
+		<div class="cell large-2"></div>
+		<div class="cell large-4">
+			<table id='person1'></table>
 		</div>
-		<div class="large-4 columns traitTableCol">
-			 <div class='traitTable'><table id='person2'></table></div>
+		<div class="cell large-4">
+			<table id='person2'></table>
 		</div>
-		<div class="large-2 columns">&nbsp;</div>
+		<div class="cell large-2"></div>
 	</div>
 
-	<div class="reveal" id="myModal" data-reveal>
-	  <h1 id="modalTitle"></h1>
-	  <p id="modalBody"></p>
-	  <button class="close-button" data-close aria-label="Close modal" type="button">
-		<span aria-hidden="true">&times;</span>
-	  </button>
+	<div class="reveal" id="resultModal" data-reveal>
+		<h1 id="modalTitle"></h1>
+		<button class="close-button" data-close aria-label="Close modal" type="button">
+			<span aria-hidden="true">&times;</span>
+		</button>
+		<p id="modalBody"></p>
 	</div>
 
-	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-slimScroll/1.3.8/jquery.slimscroll.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.min.js"></script>
-	<script type="text/javascript" src="javascripts/ranges.js"></script>
-	<script type="text/javascript" src="javascripts/client.js"></script>
-	<script type="text/javascript"> 
-		$(document).foundation();
-	</script>
+	<script type="text/javascript" src="javascript/thirdparty/jquery-3.4.0.js"></script>
+	<script type="text/javascript" src="javascript/thirdparty/foundation-6.5.1.min.js"></script>
+	<script type="text/javascript" src="javascript/ranges.js"></script>
+	<script type="text/javascript" src="javascript/client.js"></script>
 </body>
 </html>

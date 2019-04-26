@@ -1,29 +1,33 @@
-var https = require('https');
-var flatten = require('./flatten');
-var watson = require('watson-developer-cloud');
-var cfenv = require("cfenv");
-var appEnv = cfenv.getAppEnv();
-var perInsights = appEnv.getService("watsonLovePersonalityInsights");
+const PersonalityInsightsV3 = require("ibm-watson/personality-insights/v3");
+const cfenv = require("cfenv");
+const appEnv = cfenv.getAppEnv();
+const perInsights = appEnv.getService("Personality-Insights-Watson-Love");
 
-var service_url = perInsights.credentials.url;
-var service_username = perInsights.credentials.username;
-var service_password = perInsights.credentials.password;
+const perInsightsURL = perInsights.credentials.url;
+const perInsightsUsername = "apikey";
+const perInsightsKey = perInsights.credentials.apikey;
 
 exports.model = function(req, res){
 
-	var personality_insights = watson.personality_insights({
-		username: service_username,
-		password: service_password,
-			version: 'v2'
+	let personalityInsights = new PersonalityInsightsV3({
+		username: perInsightsUsername,
+		password: perInsightsKey,
+		version: '2016-10-19',
+		url: perInsightsURL
 	});
-	
-	personality_insights.profile({
-		text: req.body.content },
-		function (err, response) {
-			if (err)
+
+	personalityInsights.profile(
+		{
+			content: req.body.content,
+			content_type: "text/plain",
+			consumption_preferences: true
+		},
+		function(err, response) {
+			if (err) {
 				return res.send(err);
-			else
-				var flat_traits = flatten.flat(response.tree);
-			res.send({'traits': flat_traits, 'viz':null});
-		});
+			}
+
+			res.send(response);
+		}
+	);
 };

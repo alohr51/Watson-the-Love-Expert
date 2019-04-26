@@ -20,6 +20,15 @@ label{
 	color: #FFFFFF !important;
 }
 
+#modalTitle{
+	display: inline;
+}
+
+.close-button{
+	float: right;
+	cursor: pointer;
+}
+
 .watsonTitle{
 	font-family: "Rockwell";
 	color: #00aed1;
@@ -28,6 +37,10 @@ label{
 
 .description{
 	color:#FFFFFF;
+}
+
+.twitterLabel{
+	font-size: 1.2em;
 }
 
 .socialMedia{
@@ -44,10 +57,11 @@ label{
 
 .inputDiv{
 	color: #FFFFFF;
+	margin-top: 50px;
 }
 
 .loader{
-	visibility: hidden;
+	display: none;
 	float: right;
 	margin-top:20px;
 }
@@ -61,15 +75,19 @@ label{
 }
 
 .data{
-	width:65%;
+	width: 35%;
 	margin: 0 auto;
 	overflow: hidden;
-	margin-top: 20px;
 }
 
 .stats{
-	width:75%;
+	width:100%;
 	margin: 0 auto;
+	text-align: center;
+}
+
+.statText{
+	white-space: pre-wrap;
 }
 
 .twitterInput{
@@ -84,19 +102,19 @@ label{
 	float:right;
 }
 
-.traitTableCol{
+.tableData{
 	margin-top: 15px;
 }
 
+#person2{
+	margin-left: 15px;
+}
+
 #description{
-	margin-bottom: 0rem !important;
+	margin-bottom: 0 !important;
 	background: #26343f;
 	color: #FFFFFF;
 	text-align: center;
-}
-
-.stats{
-	width:65%;
 }
 
 .fullWidth {

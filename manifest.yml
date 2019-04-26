@@ -1,8 +1,8 @@
 ---
 applications:
 - services:
-  - myTwitterService
-  - watsonLovePersonalityInsights
+  - twitter-service
+  - Personality-Insights-Watson-Love
 name: WatsonLove
 memory: 512M
 instances: 1
