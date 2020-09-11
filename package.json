@@ -6,10 +6,10 @@
 		"start": "node app.js"
 	},
 	"dependencies": {
-		"body-parser": "1.18.3",
-		"cfenv": "1.2.2",
-		"express": "4.16.4",
-		"ibm-watson": "^4.0.1",
-		"oauth": "0.9.15"
+		"body-parser": "^1.19.0",
+		"cfenv": "^1.2.3",
+		"express": "^4.17.1",
+		"ibm-watson": "^4.5.4",
+		"oauth": "^0.9.15"
 	}
 }
